@@ -8,17 +8,17 @@ module matrixwrapper #(
     input logic clk,
     input logic reset,
     input logic start,
-    input logic [data-1:0] a [0:rows-1][0:k-1],
-    input logic [data-1:0] b [0:k-1][0:cols-1],
-    output logic [cwidth-1:0] c [0:rows-1][0:cols-1],
+    input logic signed [data-1:0] a [0:rows-1][0:k-1],
+    input logic signed [data-1:0] b [0:k-1][0:cols-1],
+    output logic signed [cwidth-1:0] c [0:rows-1][0:cols-1],
     output logic busy,
     output logic done
 
 );
 
 localparam int totalcycles = k + rows + cols - 2;
-logic [data-1:0] a_feed [0:rows-1];
-logic [data-1:0] b_feed [0:cols-1];
+logic signed [data-1:0] a_feed [0:rows-1];
+logic signed [data-1:0] b_feed [0:cols-1];
 logic [$clog2(totalcycles)-1:0] cyclecount;
 logic clear;
 

@@ -5,11 +5,11 @@ module mac #(
     input logic clk, 
     input logic reset,
     input logic clear, 
-    input logic [data-1:0] a,
-    input logic [data-1:0] b,
-    output logic [data-1:0] a_out,
-    output logic [data-1:0] b_out,
-    output logic [cwidth-1:0] csum
+    input logic signed [data-1:0] a,
+    input logic signed [data-1:0] b,
+    output logic signed [data-1:0] a_out,
+    output logic signed [data-1:0] b_out,
+    output logic signed [cwidth-1:0] csum
 
 );
 

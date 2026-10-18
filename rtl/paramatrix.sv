@@ -7,15 +7,15 @@ module paramatrix #(
     input logic clk,
     input logic reset, 
     input logic clear,
-    input logic [data-1:0] a [0:rows-1],
-    input logic [data-1:0] b [0:cols-1],
-    output logic [cwidth-1:0] c [0:rows-1][0:cols-1]
+    input logic signed [data-1:0] a [0:rows-1],
+    input logic signed [data-1:0] b [0:cols-1],
+    output logic signed [cwidth-1:0] c [0:rows-1][0:cols-1]
  
 );
 
 
-logic [data-1:0] a_out [0:rows-1][0:cols-1];
-logic [data-1:0] b_out [0:rows-1][0:cols-1];
+logic signed [data-1:0] a_out [0:rows-1][0:cols-1];
+logic signed [data-1:0] b_out [0:rows-1][0:cols-1];
 
 genvar row, col;
 
